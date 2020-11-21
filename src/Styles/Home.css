@@ -1,0 +1,42 @@
+.CarouselItem {
+  height: 80vh !important;
+}
+
+.MuiPaper-elevation1 {
+  height: 80vh !important;
+  width: auto;
+  background-size: 100% auto;
+}
+
+.Carousel-root-1 {
+  padding: 0 3rem;
+  padding-top: 1rem;
+}
+
+.Carousel-indicators-2 {
+  opacity: 0;
+}
+
+.Carousel-indicators-2:hover {
+  opacity: 1;
+}
+
+@media (max-width: 860px) {
+  .MuiPaper-elevation1 {
+    background-repeat: no-repeat;
+    height: 50vh !important;
+    background-size: 100% auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .MuiPaper-elevation1 {
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: 100% auto;
+  }
+  .Carousel-root-1 {
+    padding: 0 1.5rem;
+    padding-top: 0.5rem;
+  }
+}
