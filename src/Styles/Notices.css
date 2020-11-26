@@ -1,0 +1,46 @@
+.notices {
+  display: flex;
+}
+
+.makeStyles-root-23 {
+  border-color: 1px solid #3f517e;
+}
+
+.notices__left,
+.notices__right {
+  max-width: 700px;
+  flex: 1;
+}
+
+.MuiDivider-inset {
+  margin-left: 0 !important;
+}
+
+.notices__header {
+  background-color: #3f517e;
+  color: #fff;
+  padding: 1rem 3rem;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.notices__items {
+  overflow-y: scroll !important;
+  height: 350px !important;
+}
+
+@media (max-width: 768px) {
+  .notices {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .notices__header {
+    font-size: 20px;
+    padding: 0.5rem 1.5rem;
+    padding-bottom: 0.25rem;
+    font-weight: 400;
+  }
+} ;

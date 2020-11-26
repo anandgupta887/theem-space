@@ -1,5 +1,6 @@
 .CarouselItem {
-  height: 80vh !important;
+  height: auto !important;
+  box-shadow: 5px 5px 8px white !important;
 }
 
 .MuiPaper-elevation1 {
@@ -19,6 +20,11 @@
 
 .Carousel-indicators-2:hover {
   opacity: 1;
+}
+
+.home__notices {
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 @media (max-width: 860px) {
