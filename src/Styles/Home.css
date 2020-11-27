@@ -25,6 +25,8 @@
 .home__notices {
   padding-top: 3%;
   padding-bottom: 3%;
+  margin-top: 2%;
+  margin-right: 2%;
 }
 
 @media (max-width: 860px) {

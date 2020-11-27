@@ -1,0 +1,23 @@
+.notice {
+  width: 50vw;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+}
+
+.notice__header {
+  background-color: #3f517e;
+}
+
+.notice__header > h2 {
+  padding: 1rem;
+  color: white;
+}
+
+@media (max-width: 968) {
+  .notices {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

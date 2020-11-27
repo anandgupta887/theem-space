@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import { db } from "./firebase";
 import { useEffect, useState } from "react";
 import NoticeItem from "./NoticeItem";
+import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -34,12 +35,15 @@ function Notices() {
         </div>
         <div className="notices__items">
           {notices.map((notice) => (
-            <NoticeItem
-              key={notice.id}
-              title={notice.data.title}
-              content={notice.data.content}
-              tag={notice.data.tag}
-            />
+            <Link to="/movies">
+              <NoticeItem
+                key={notice.id}
+                id={notice.id}
+                title={notice.data.title}
+                content={notice.data.content}
+                tag={notice.data.tag}
+              />
+            </Link>
           ))}
         </div>
       </div>
@@ -49,6 +53,7 @@ function Notices() {
           {notices.map((notice) => (
             <NoticeItem
               key={notice.id}
+              id={notice.id}
               title={notice.data.title}
               content={notice.data.content}
               tag={notice.data.tag}

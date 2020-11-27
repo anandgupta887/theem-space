@@ -34,6 +34,10 @@
     display: flex;
     flex-direction: column;
   }
+  .notices__left,
+  .notices__right {
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 420px) {
