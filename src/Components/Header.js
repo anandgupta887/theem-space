@@ -124,7 +124,9 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Faculty</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Admin</MenuItem>
+      <Link to="/admin/login">
+        <MenuItem onClick={handleMenuClose}>Admin</MenuItem>
+      </Link>
     </Menu>
   );
 

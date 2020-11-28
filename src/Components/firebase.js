@@ -1,14 +1,14 @@
 import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyAUFKmfxuxmEDYJ4k2wm6k1H62chzTHPOQ",
-  authDomain: "theme-space.firebaseapp.com",
-  databaseURL: "https://theme-space.firebaseio.com",
-  projectId: "theme-space",
-  storageBucket: "theme-space.appspot.com",
-  messagingSenderId: "865911256949",
-  appId: "1:865911256949:web:3bf57951488b8e84d9853c",
-  measurementId: "G-R765TE3VJK",
+  apiKey: "AIzaSyDr1W3XFriMJ8ZPnoMjLDUgiJ6c-6Cm8jQ",
+  authDomain: "theemspace-d84e1.firebaseapp.com",
+  databaseURL: "https://theemspace-d84e1.firebaseio.com",
+  projectId: "theemspace-d84e1",
+  storageBucket: "theemspace-d84e1.appspot.com",
+  messagingSenderId: "353671980239",
+  appId: "1:353671980239:web:a313182ac29fd6015843ba",
+  measurementId: "G-SRF49E4B4F",
 });
 
 const db = firebaseApp.firestore();

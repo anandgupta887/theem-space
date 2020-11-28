@@ -4,7 +4,7 @@
   grid-column-gap: 90px;
   margin-top: 30px;
   padding: 20px;
-  background-color: #3f517e;
+  background-color: #3f517e !important;
   color: #fefefefe;
 }
 

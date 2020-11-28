@@ -3,6 +3,10 @@
   margin-right: auto;
   margin-left: auto;
   height: auto;
+  border: 1px solid #3f517e;
+  border-top: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .notice__header {
@@ -14,8 +18,33 @@
   color: white;
 }
 
-@media (max-width: 968) {
-  .notices {
+.notice__content {
+  padding: 2% 5%;
+}
+
+.notice__attachment {
+  padding: 2% 5%;
+}
+
+.notice__attachLeft > p {
+  font-size: x-large;
+}
+
+.notice__attachRight {
+  display: flex;
+}
+
+.notice__attachItem {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.notice__attachIcon {
+  font-size: 2.5rem !important;
+}
+
+@media (max-width: 968px) {
+  .notice {
     width: 90vw;
     margin-right: auto;
     margin-left: auto;

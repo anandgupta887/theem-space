@@ -5,6 +5,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import { Button } from "@material-ui/core";
 import Play from "../Images/google-play.png";
 import Apple from "../Images/apple.png";
+import "../Styles/Footer.css";
 
 function Footer() {
   return (
