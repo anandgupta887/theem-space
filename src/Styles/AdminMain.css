@@ -1,0 +1,19 @@
+.adminMain {
+  height: 100vh;
+  margin-top: 30px;
+  display: flex;
+  padding: 1%;
+}
+
+.adminMain__left {
+  width: 23%;
+  /* border: 1px solid black; */
+  height: inherit;
+}
+
+.adminMain__Right {
+  width: 77%;
+  margin-left: 2%;
+  /* border: 1px solid black; */
+  height: inherit;
+}

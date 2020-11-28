@@ -1,0 +1,28 @@
+{
+    "user": "admin@theemspace.com",
+    "adminpanel": [{
+        "number":"1",
+        "name": "Manage Degree Notice"
+    }, {
+        "number":"2",
+        "name":"Manage Degree Notes"
+    },{
+        "number":"3",
+        "name": "Manage Degree Faculty"
+    }, {
+        "number":"4",
+        "name": "Manage Degree Result"
+    }, {
+        "number":"5",
+        "name": "Manage Diploma Notice"
+    }, {
+        "number":"6",
+        "name":"Manage Diploma Notes"
+    },{
+        "number":"3",
+        "name": "Manage Diploma Faculty"
+    }, {
+        "number":"4",
+        "name": "Manage Diploma Result"
+    }]
+}

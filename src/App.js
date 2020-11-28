@@ -5,14 +5,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Notice from "./Components/Notice";
 import Login from "./Components/Login";
+import Admin from "./Components/Admin";
 
 function App() {
   return (
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/admin/login">
-            <Login />
+          <Route path="/admin">
+            <Admin />
           </Route>
           <Route path="/notices/:id">
             <Header />
