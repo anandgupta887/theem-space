@@ -4,7 +4,7 @@ import Home from "./Components/Home";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Notice from "./Components/Notice";
-import Login from "./Components/Login";
+import Contact from "./Components/Contact";
 import Admin from "./Components/Admin";
 import Notes from "./Components/Notes";
 
@@ -16,6 +16,11 @@ function App() {
           <Route path="/notes">
             <Header />
             <Notes />
+            <Footer />
+          </Route>
+          <Route path="/contact-us">
+            <Header />
+            <Contact />
             <Footer />
           </Route>
           <Route path="/admin">

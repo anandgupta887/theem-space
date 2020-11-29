@@ -24,14 +24,8 @@ function Footer() {
           <a href="#" className="footer__left__anchor">
             Feedback
           </a>
-          <a href="#" className="footer__left__anchor">
-            Help Center
-          </a>
-          <a href="#" className="footer__left__anchor">
-            Help Center
-          </a>
-          <a href="#" className="footer__left__anchor">
-            Help Center
+          <a href="/contact-us" className="footer__left__anchor">
+            Contact US
           </a>
         </div>
 
