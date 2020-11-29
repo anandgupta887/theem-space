@@ -31,10 +31,8 @@ function Footer() {
 
         <div className="footer__leftPara">
           <p>
-            © 2020 STAR All Rights Reserved HBO,Home Box Office and all related
-            channel and programming logos are service marks of, and all related
-            programming visuals and elements are the property of, Home Box
-            Office, Inc. All rights reserved.
+            © 2020 Theem Space. Initiative by students of nTheem College Of
+            Engineering. All rights reserved.
           </p>
         </div>
       </div>

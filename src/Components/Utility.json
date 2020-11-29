@@ -24,6 +24,9 @@
     }, {
         "number":"8",
         "name": "Manage Diploma Result"
+    }, {
+        "number":"9",
+        "name": "Query"
     }],
     "notes": [{
         "id":"1",

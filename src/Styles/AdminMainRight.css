@@ -1,0 +1,4 @@
+.adminMainRight {
+  height: inherit !important;
+  overflow-y: scroll;
+}

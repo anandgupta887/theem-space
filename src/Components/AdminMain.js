@@ -38,7 +38,13 @@ function AdminMain() {
           <List component="nav" aria-label="main mailbox folders">
             {Utility.adminpanel.map((item) => (
               <>
-                <ListItem button>
+                <ListItem
+                  key={item.number}
+                  button
+                  onClick={() => {
+                    setSearch(item.number);
+                  }}
+                >
                   <ListItemIcon>
                     <NotificationsIcon />
                   </ListItemIcon>

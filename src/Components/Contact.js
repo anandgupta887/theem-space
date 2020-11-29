@@ -13,18 +13,22 @@ function Contact() {
 
   const handleChange = (e) => {
     e.preventDefault();
-    db.collection("queries").add({
-      name: name,
-      number: number,
-      email: email,
-      message: message,
-      timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-    setName("");
-    setEmail("");
-    setMessage("");
-    setNumber("");
-    setQuery(true);
+    if (name && email && message && number) {
+      db.collection("queries").add({
+        name: name,
+        number: number,
+        email: email,
+        message: message,
+        timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+      setNumber("");
+      setQuery(true);
+    } else {
+      alert("Please fill all the inputs");
+    }
   };
 
   return (

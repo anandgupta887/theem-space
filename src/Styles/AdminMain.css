@@ -17,3 +17,8 @@
   /* border: 1px solid black; */
   height: inherit;
 }
+
+.adminMain__Right > div {
+  height: inherit;
+  overflow-y: scroll;
+}
