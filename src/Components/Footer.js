@@ -1,4 +1,4 @@
-import "../Styles/Footer.css";
+import React from "react";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -11,25 +11,25 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__left">
-        <div className="footer__left__links">
-          <a href="#" className="footer__left__anchor">
+        <div className="footer__leftLink">
+          <a href="#" className="footer__leftAnchor">
             About Us
           </a>
-          <a href="#" className="footer__left__anchor">
+          <a href="#" className="footer__leftAnchor">
             Terms Of Use
           </a>
-          <a href="#" className="footer__left__anchor">
+          <a href="#" className="footer__leftAnchor">
             Privacy Policy
           </a>
-          <a href="#" className="footer__left__anchor">
+          <a href="#" className="footer__leftAnchor">
             Feedback
           </a>
-          <a href="/contact-us" className="footer__left__anchor">
-            Contact US
+          <a href="/contact-us" className="footer__leftAnchor">
+            Contact Us
           </a>
         </div>
 
-        <div className="footer__left__para">
+        <div className="footer__leftPara">
           <p>
             © 2020 STAR All Rights Reserved HBO,Home Box Office and all related
             channel and programming logos are service marks of, and all related
@@ -57,32 +57,27 @@ function Footer() {
           {" "}
           <InstagramIcon fontSize="large" />{" "}
         </a>
-        <br />
-        <a href="#">
-          {" "}
-          <FacebookIcon fontSize="large" />{" "}
-        </a>
       </div>
 
       <div className="footer__right">
         <p>App</p>
         <Button
-          className="footer__right__btn1"
+          className="footer__rightBtn1"
           size="large"
           variant="contained"
           color="primary"
         >
-          <img src={Play} className="footer__play__logo" alt="" />
-          <div className="footer__btn__p"> Google Play</div>
+          <img src={Play} className="footer__playLogo" alt="" />
+          <div className="footer__btnP"> Google Play</div>
         </Button>
         <Button
-          className="footer__right__btn2"
+          className="footer__rightBtn2"
           size="large"
           variant="contained"
           color="primary"
         >
-          <img src={Apple} className="footer__play__logo apple" alt="" />
-          <div className="footer__btn__p">App Store</div>
+          <img src={Apple} className="footer__playLogo apple" alt="" />
+          <div className="footer__btnP">App Store</div>
         </Button>{" "}
       </div>
     </div>
