@@ -6,12 +6,18 @@ import Footer from "./Components/Footer";
 import Notice from "./Components/Notice";
 import Login from "./Components/Login";
 import Admin from "./Components/Admin";
+import Notes from "./Components/Notes";
 
 function App() {
   return (
     <div className="app">
       <Router>
         <Switch>
+          <Route path="/notes">
+            <Header />
+            <Notes />
+            <Footer />
+          </Route>
           <Route path="/admin">
             <Admin />
           </Route>

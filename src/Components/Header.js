@@ -14,13 +14,14 @@ import MailIcon from "@material-ui/icons/Mail";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import clsx from "clsx";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import Button from "@material-ui/core/Button";
+import NotesIcon from "@material-ui/icons/Notes";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
+import NotificationsIcon from "@material-ui/icons/Notifications";
 import { Link } from "react-router-dom";
 import "../Styles/Header.css";
 
@@ -105,6 +106,10 @@ export default function PrimarySearchAppBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [user, setUser] = useState(false);
   const [drawer, setDrawer] = useState(false);
+  const [menu, setMenu] = React.useState([
+    { name: "Notes", link: "/notes", icon: <NotesIcon /> },
+    { name: "Notice", link: "/notice", icon: <NotificationsIcon /> },
+  ]);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -179,17 +184,17 @@ export default function PrimarySearchAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {menu.map(({ name, link, icon }, index) => (
+          <Link to={`${link}`}>
+            <ListItem button key={index}>
+              <ListItemIcon>{icon && icon}</ListItemIcon>
+              <ListItemText primary={name} />
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
-      <List>
+      {/* <List>
         {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
@@ -198,7 +203,7 @@ export default function PrimarySearchAppBar() {
             <ListItemText primary={text} />
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </div>
   );
 

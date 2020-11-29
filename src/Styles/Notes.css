@@ -1,0 +1,19 @@
+.notes {
+  height: auto;
+  margin-top: 30px;
+  display: flex;
+  padding: 5%;
+}
+
+.notes__left {
+  width: 23%;
+  /* border: 1px solid black; */
+  height: inherit;
+}
+
+.notes__Right {
+  width: 77%;
+  margin-left: 2%;
+  /* border: 1px solid black; */
+  height: inherit;
+}

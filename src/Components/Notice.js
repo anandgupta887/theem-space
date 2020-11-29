@@ -34,21 +34,23 @@ function Notice() {
           For — <span>{notice.tag}</span>
         </p>
       </div> */}
-      <div className="notice__attachment">
-        <div className="notice__attachLeft">
-          <p>Attachments</p>
+      {attach && (
+        <div className="notice__attachment">
+          <div className="notice__attachLeft">
+            <p>Attachments</p>
+          </div>
+          <div className="notice__attachRight">
+            {attach.map(({ fileName, url }) => (
+              <div className="notice__attachItem">
+                <a href={url}>
+                  <FileCopyIcon className="notice__attachIcon" />
+                  <p>{fileName}</p>
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="notice__attachRight">
-          {attach.map(({ fileName, url }) => (
-            <div className="notice__attachItem">
-              <a href={url}>
-                <FileCopyIcon className="notice__attachIcon" />
-                <p>{fileName}</p>
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
+      )}
     </div>
   );
 }

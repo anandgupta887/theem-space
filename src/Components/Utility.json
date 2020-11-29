@@ -19,14 +19,35 @@
         "number":"6",
         "name":"Manage Diploma Notes"
     },{
-        "number":"3",
+        "number":"7",
         "name": "Manage Diploma Faculty"
     }, {
-        "number":"4",
+        "number":"8",
         "name": "Manage Diploma Result"
     }],
-    "drawerItem":[{
-        "name" : "Notice",
-        "icon" : ""
+    "notes": [{
+        "id":"1",
+        "name": "1st Semester"
+    },{
+        "id":"2",
+        "name":"2nd Semester"
+    },{
+        "id":"3",
+        "name":"3rd Semester"
+    },{
+        "id":"4",
+        "name":"4th Semester"
+    },{
+        "id":"5",
+        "name":"5th Semester"
+    },{
+        "id":"6",
+        "name":"6th Semester"
+    },{
+        "id":"7",
+        "name":"7th Semester"
+    },{
+        "id":"8",
+        "name":"8th Semester"
     }]
 }
