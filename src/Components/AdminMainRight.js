@@ -4,7 +4,7 @@ import "../Styles/AdminMainRight.css";
 
 function AdminMainRight({ search }) {
   if (search === "1" || search === "5") {
-    return <DegreeNotice />;
+    return <DegreeNotice search={search} />;
   } else if (search === "9") {
     return <Query />;
   } else {

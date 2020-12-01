@@ -8,15 +8,24 @@ function Notice() {
   const [notice, setNotice] = useState([]);
   const [attach, setAttach] = useState([]);
 
-  const { id } = useParams();
+  const { course, id } = useParams();
 
   useEffect(() => {
-    db.collection("notices")
-      .doc(id)
-      .onSnapshot((snapshot) => {
-        setNotice(snapshot.data());
-        setAttach(snapshot.data().attachment);
-      });
+    if (course === "degree") {
+      db.collection("degreeNotice")
+        .doc(id)
+        .onSnapshot((snapshot) => {
+          setNotice(snapshot.data());
+          setAttach(snapshot.data().attachment);
+        });
+    } else {
+      db.collection("notices")
+        .doc(id)
+        .onSnapshot((snapshot) => {
+          setNotice(snapshot.data());
+          setAttach(snapshot.data().attachment);
+        });
+    }
   }, []);
 
   console.log(notice);
@@ -29,6 +38,16 @@ function Notice() {
       <div className="notice__content">
         <span>{notice.content}</span>
       </div>
+      {notice.url && (
+        <div className="notice__url">
+          <div className="notice__urlHeading">
+            <p>Reference</p>
+            <p className="notice__ref">
+              <a href={notice.url}>Click Here</a>
+            </p>
+          </div>
+        </div>
+      )}
       {/* <div className="notice__tags">
         <p>
           For — <span>{notice.tag}</span>

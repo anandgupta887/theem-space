@@ -1,4 +1,5 @@
 .admin__degreeNotice {
+  padding: 0 3%;
 }
 
 .admin__degree {
@@ -6,7 +7,9 @@
 }
 
 .admin__degreeLeft {
+  flex: 1;
 }
 
 .admin__degreeRight {
+  flex: 0;
 }

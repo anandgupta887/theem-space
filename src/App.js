@@ -26,7 +26,7 @@ function App() {
           <Route path="/admin">
             <Admin />
           </Route>
-          <Route path="/notices/:id">
+          <Route path="/notices/:course/:id">
             <Header />
             <Notice />
             <Footer />

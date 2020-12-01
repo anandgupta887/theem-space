@@ -18,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function NoticeItem({ id, title, content, tag }) {
+function NoticeItem({ id, course, title, content, tag }) {
   const classes = useStyles();
 
   return (
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
-        <a href={`/notices/${id}`}>
+        <a href={`/notices/${course}/${id}`}>
           <ListItemText
             primary={title}
             secondary={

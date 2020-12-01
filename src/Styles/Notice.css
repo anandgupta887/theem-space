@@ -39,6 +39,18 @@
   cursor: pointer;
 }
 
+.notice__url {
+  padding: 2% 5%;
+}
+
+.notice__urlHeading > p {
+  font-size: x-large;
+}
+
+.notice__ref > a {
+  font-size: large;
+}
+
 .notice__attachIcon {
   font-size: 2.5rem !important;
 }

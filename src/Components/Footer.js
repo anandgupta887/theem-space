@@ -31,7 +31,7 @@ function Footer() {
 
         <div className="footer__leftPara">
           <p>
-            © 2020 Theem Space. Initiative by students of nTheem College Of
+            © 2020 Theem Space. Initiative by students of Theem College Of
             Engineering. All rights reserved.
           </p>
         </div>

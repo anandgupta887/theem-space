@@ -18,6 +18,7 @@ const useStyles = makeStyles({
 function Notices() {
   const classes = useStyles();
   const [notices, setNotices] = useState([]);
+  const [degree, setDegree] = useState([]);
 
   useEffect(() => {
     db.collection("notices").onSnapshot((snapshot) => {
@@ -27,6 +28,16 @@ function Notices() {
     });
   }, []);
 
+  useEffect(() => {
+    db.collection("degreeNotice")
+      .orderBy("timeStamp", "desc")
+      .onSnapshot((snapshot) => {
+        setDegree(
+          snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))
+        );
+      });
+  }, []);
+
   return (
     <div className="notices">
       <div className={`${classes.root} notices__left`}>
@@ -34,16 +45,15 @@ function Notices() {
           <span>Degree Notices</span>
         </div>
         <div className="notices__items">
-          {notices.map((notice) => (
-            <Link to="/movies">
-              <NoticeItem
-                key={notice.id}
-                id={notice.id}
-                title={notice.data.title}
-                content={notice.data.content}
-                tag={notice.data.tag}
-              />
-            </Link>
+          {degree.map((item) => (
+            <NoticeItem
+              key={item.id}
+              course="degree"
+              id={item.id}
+              title={item.data.title}
+              content={item.data.content}
+              tag={item.data.tag}
+            />
           ))}
         </div>
       </div>
@@ -54,6 +64,7 @@ function Notices() {
             <NoticeItem
               key={notice.id}
               id={notice.id}
+              course="diploma"
               title={notice.data.title}
               content={notice.data.content}
               tag={notice.data.tag}
