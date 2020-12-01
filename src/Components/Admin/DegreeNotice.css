@@ -13,3 +13,19 @@
 .admin__degreeRight {
   flex: 0;
 }
+
+.admin__degreeButton {
+  margin-top: 10px;
+}
+
+.admin__addNotice {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  width: fit-content;
+}
+
+.MuiFab-primary:hover {
+  color: #3f517e !important;
+}

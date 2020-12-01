@@ -1,0 +1,104 @@
+.footer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 90px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #3f517e !important;
+  color: #fefefe;
+}
+
+.footer__leftAnchor {
+  margin-right: 10px;
+  font-size: 17px !important;
+  font-weight: 500;
+}
+
+.footer__leftPara {
+  margin-top: 25px;
+}
+
+.footer__right {
+  text-align: center;
+}
+
+.footer__rightBtn1 {
+  text-transform: none !important;
+  font-size: 15px !important;
+  margin-right: 15px !important;
+}
+.footer__rightBtn2 {
+  text-transform: none !important;
+  font-size: 15px !important;
+  margin-right: 15px !important;
+}
+
+.footer__playLogo {
+  height: 25px;
+  width: 25px;
+  margin-left: -15px;
+  margin-right: 5px;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 972px) and (min-width: 550px) {
+  .footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+  }
+
+  .footer__rightBtn2 {
+    margin-top: 20px !important;
+  }
+}
+
+@media screen and (max-width: 550px) and (min-width: 440px) {
+  .footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 30px;
+  }
+
+  .footer__rightBtn2 {
+    margin-top: 20px !important;
+  }
+
+  .footer__left {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .footer__btnP {
+    margin-left: -5px !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+  }
+
+  .footer__rightBtn2 {
+    margin-top: 20px !important;
+  }
+
+  .footer__left {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .footer__btnP {
+    line-height: normal !important;
+  }
+
+  .footer__right button {
+    text-align: right !important;
+  }
+}

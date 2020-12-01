@@ -1,11 +1,10 @@
-import React from "react";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import { Button } from "@material-ui/core";
 import Play from "../Images/google-play.png";
 import Apple from "../Images/apple.png";
-import "../Styles/Footer.css";
+import "../Styles/Foot.css";
 
 function Footer() {
   return (
@@ -76,7 +75,7 @@ function Footer() {
         >
           <img src={Apple} className="footer__playLogo apple" alt="" />
           <div className="footer__btnP">App Store</div>
-        </Button>{" "}
+        </Button>
       </div>
     </div>
   );
