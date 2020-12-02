@@ -9,6 +9,7 @@
   width: 23%;
   /* border: 1px solid black; */
   height: inherit;
+  overflow-y: scroll;
 }
 
 .adminMain__Right {

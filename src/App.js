@@ -7,6 +7,7 @@ import Notice from "./Components/Notice";
 import Contact from "./Components/Contact";
 import Admin from "./Components/Admin";
 import Notes from "./Components/Notes";
+import NoticePage from "./Components/NoticePage";
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
           <Route path="/notes">
             <Header />
             <Notes />
+            <Footer />
+          </Route>
+          <Route path="/notice">
+            <Header />
+            <NoticePage />
             <Footer />
           </Route>
           <Route path="/contact-us">
