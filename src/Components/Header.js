@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -22,6 +22,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { Link } from "react-router-dom";
 import "../Styles/Header.css";
+import { useStateValue } from "./StateProvider";
+import { Button } from "@material-ui/core";
+import { auth } from "./firebase";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -102,12 +105,34 @@ export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  const [user, setUser] = useState(false);
   const [drawer, setDrawer] = useState(false);
+  const [user, setUser] = useState([]);
   const [menu, setMenu] = React.useState([
-    { name: "Notes", link: "/notes", icon: <NotesIcon /> },
+    { name: "Study Material", link: "/notes", icon: <NotesIcon /> },
     { name: "Notice", link: "/notice", icon: <NotificationsIcon /> },
   ]);
+
+  const [{ loggedInUser, isadmin }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+      } else {
+        setUser(null);
+      }
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const handleLogout = () => {
+    auth.signOut();
+    dispatch({
+      type: "logout",
+    });
+  };
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -256,6 +281,11 @@ export default function PrimarySearchAppBar() {
             />
           </div>
           <div className={classes.grow} />
+          {user && (
+            <Button className="logout__button" onClick={handleLogout}>
+              Log Out
+            </Button>
+          )}
           <div className={classes.sectionDesktop}>
             <IconButton
               edge="end"

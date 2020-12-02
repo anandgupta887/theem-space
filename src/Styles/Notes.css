@@ -8,12 +8,34 @@
 .notes__left {
   width: 23%;
   /* border: 1px solid black; */
-  height: inherit;
+  height: 80vh;
 }
 
 .notes__Right {
   width: 77%;
+  height: 80vh;
+  overflow-y: scroll;
   margin-left: 2%;
   /* border: 1px solid black; */
   height: inherit;
+  display: flex;
+}
+
+.notes__RightItem {
+  display: flex;
+}
+
+.notes__RightCard {
+  position: relative;
+  margin: 1%;
+  max-height: 240px !important;
+}
+
+.noteUpload {
+  position: sticky;
+  /* bottom: 0;
+  right: 0; */
+  margin-left: auto;
+  width: fit-content;
+  height: auto;
 }

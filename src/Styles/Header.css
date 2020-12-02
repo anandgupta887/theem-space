@@ -1,3 +1,7 @@
 .MuiAppBar-colorPrimary {
   background-color: #3f517e !important;
 }
+
+.logout__button {
+  color: white !important;
+}

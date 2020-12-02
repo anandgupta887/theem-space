@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import "./Query.css";
 import { db } from "../firebase";
+import { Divider } from "@material-ui/core";
 
 function Query() {
   const [query, setQuery] = useState([]);
@@ -12,9 +14,23 @@ function Query() {
       });
   }, []);
 
-  console.log(query);
-
-  return <div>I m query</div>;
+  return (
+    <div className="query">
+      {query.map((item) => (
+        <div className="query__item">
+          <div className="query__detail">
+            <span>Name: {item.name}</span>
+            <span>Mobile No : {item.number}</span>
+            <span>Email ID : {item.email}</span>
+          </div>
+          <div className="query__message">
+            <p>Message: {item.message}</p>
+          </div>
+          <Divider />
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default Query;

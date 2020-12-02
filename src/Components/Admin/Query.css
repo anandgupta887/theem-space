@@ -1,0 +1,10 @@
+.query {
+  padding: 2% 5%;
+}
+
+.query__detail {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  justify-content: space-between;
+}

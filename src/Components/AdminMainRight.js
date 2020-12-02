@@ -8,7 +8,7 @@ function AdminMainRight({ search }) {
   } else if (search === "9") {
     return <Query />;
   } else {
-    return <div>nothing</div>;
+    return <div></div>;
   }
 }
 

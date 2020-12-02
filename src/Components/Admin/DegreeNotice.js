@@ -6,12 +6,11 @@ import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import Truncate from "react-truncate";
 import DeleteIcon from "@material-ui/icons/Delete";
-import UpdateIcon from "@material-ui/icons/Update";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import firebase from "firebase";
 import "./DegreeNotice.css";
-import { Label } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +35,12 @@ function DegreeNotice({ search }) {
   const classes = useStyles();
   const [display, setDisplay] = useState([]);
   const [open, setOpen] = useState(false);
-  const [deleted, setDeleted] = useState([]);
+  const [deleted, setDeleted] = useState({});
+  const [title, setTitle] = useState("");
+  const [tag, setTag] = useState("");
+  const [content, setContent] = useState("");
+  const [ref, setRef] = useState("");
+  const [attach, setAttach] = useState([]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -49,22 +53,26 @@ function DegreeNotice({ search }) {
   useEffect(() => {
     const degreeNotice = () => {
       if (search === "1") {
-        db.collection("degreeNotice").onSnapshot((snapshot) => {
-          setDisplay(
-            snapshot.docs.map((doc) => ({
-              id: doc.id,
-              data: doc.data(),
-            }))
-          );
-        });
+        db.collection("degreeNotice")
+          .orderBy("timeStamp", "desc")
+          .onSnapshot((snapshot) => {
+            setDisplay(
+              snapshot.docs.map((doc) => ({
+                id: doc.id,
+                data: doc.data(),
+              }))
+            );
+          });
       } else if (search === "5") {
         db.collection("notices").onSnapshot((snapshot) => {
-          setDisplay(snapshot.docs.map((doc) => doc.data()));
+          setDisplay(
+            snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))
+          );
         });
       }
     };
     degreeNotice();
-  }, []);
+  }, [search]);
 
   const handleDelete = (id, data) => {
     setDeleted(data);
@@ -80,8 +88,24 @@ function DegreeNotice({ search }) {
     setDeleted([]);
   };
 
-  const addNewNotice = () => {
-    console.log("click");
+  const addNewNotice = (e) => {
+    e.preventDefault();
+    db.collection("degreeNotice")
+      .add({
+        By: "admin",
+        title: title,
+        content: content,
+        url: ref,
+        attachment: attach,
+        timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+      .then(() => alert("added successfully"))
+      .catch((err) => alert(err.message));
+    setTitle("");
+    setTag("");
+    setContent("");
+    setAttach([]);
+    setRef("");
   };
 
   return (
@@ -130,27 +154,52 @@ function DegreeNotice({ search }) {
               <div className="addNotice__heading">
                 <h1>Add Notice</h1>
               </div>
-              <div className="addNotice__inputs">
-                <Input placeholder="Enter title" className="addNotice__title" />
-                <Input
-                  placeholder="Enter tag (E.g KT Student, Comp dept)"
-                  className="addNotice__title"
-                />
-                <Input
-                  placeholder="Enter Content Here..."
-                  className="addNotice__title"
-                />
-                <Input
-                  placeholder="Enter Reference URL (if exists)"
-                  className="addNotice__title"
-                />
-              </div>
-              <div className="addNotice__upload">
-                <input type="file" id="upload" hidden />
-                <label for="upload">Choose file</label>
-                <br />
-                <button className="addNotice__post">Post</button>
-              </div>
+              <form>
+                <div className="addNotice__inputs">
+                  <Input
+                    placeholder="Enter title"
+                    className="addNotice__title"
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={title}
+                    required
+                  />
+                  <Input
+                    placeholder="Enter tag (E.g KT Student, Comp dept)"
+                    className="addNotice__title"
+                    onChange={(e) => setTag(e.target.value)}
+                    value={tag}
+                    required
+                  />
+                  <Input
+                    placeholder="Enter Content Here..."
+                    className="addNotice__title"
+                    onChange={(e) => setContent(e.target.value)}
+                    value={content}
+                    required
+                  />
+                  <Input
+                    placeholder="Enter Reference URL (if exists)"
+                    className="addNotice__title"
+                    onChange={(e) => setRef(e.target.value)}
+                    value={ref}
+                  />
+                </div>
+                <div className="addNotice__upload">
+                  <input
+                    type="file"
+                    id="upload"
+                    hidden
+                    onChange={(e) => {
+                      console.log(e.target.files);
+                    }}
+                  />
+                  <label for="upload">Choose file</label>
+                  <br />
+                  <button onClick={addNewNotice} className="addNotice__post">
+                    Post
+                  </button>
+                </div>
+              </form>
             </div>
           </Fade>
         </Modal>
