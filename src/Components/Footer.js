@@ -56,7 +56,7 @@ function Footer() {
         </a>
       </div>
 
-      <div className="footer__right">
+      {/* <div className="footer__right">
         <p>App</p>
         <Button
           className="footer__rightBtn1"
@@ -76,7 +76,7 @@ function Footer() {
           <img src={Apple} className="footer__playLogo apple" alt="" />
           <div className="footer__btnP">App Store</div>
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -203,8 +203,8 @@ export default function PrimarySearchAppBar() {
         [classes.fullList]: anchor === "top" || anchor === "bottom",
       })}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
     >
       <List>
         {menu.map(({ name, link, icon }, index) => (
@@ -242,7 +242,7 @@ export default function PrimarySearchAppBar() {
   };
 
   return (
-    <div className={classes.grow}>
+    <div className={`${classes.grow} header`}>
       <AppBar position="static">
         <Toolbar>
           <React.Fragment>

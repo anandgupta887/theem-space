@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Query.css";
 import { db } from "../firebase";
 import { Divider } from "@material-ui/core";
+import { timeConverter } from "../Utility";
 
 function Query() {
   const [query, setQuery] = useState([]);
@@ -20,6 +21,10 @@ function Query() {
         <div className="query__item">
           <div className="query__detail">
             <span>Name: {item.name}</span>
+            <span>At: {timeConverter(item.timeStamp)}</span>
+          </div>
+          <br />
+          <div className="query__detail">
             <span>Mobile No : {item.number}</span>
             <span>Email ID : {item.email}</span>
           </div>
