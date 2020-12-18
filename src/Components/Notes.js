@@ -63,11 +63,36 @@ function Notes() {
   const [name, setName] = useState("");
   const [open, setOpen] = useState(false);
 
+  const [notes, setNotes] = useState([
+    {
+      name: "Sem 1 Study Material",
+      url:
+        "https://drive.google.com/drive/folders/1ijFioQtdkpXgAt0o_g_oe6o132DEcKav?usp=sharing",
+    },
+    {
+      name: "Sem 3 Study Material",
+      url:
+        "https://drive.google.com/drive/folders/1ijFioQtdkpXgAt0o_g_oe6o132DEcKav?usp=sharing",
+    },
+  ]);
+
   const handleOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
+    setOpen(false);
+  };
+
+  const notesUpload = (e) => {
+    console.log(e);
+    e.preventDefault();
+    setNotes([
+      ...notes,
+      {
+        name: name,
+      },
+    ]);
     setOpen(false);
   };
 
@@ -92,52 +117,28 @@ function Notes() {
       </div>
       <div className={`${classes.root} notes__Right`}>
         <Paper elevation={3} className="notes__RightItem">
-          <Card className={`${classes.cardroot} notes__RightCard`}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg"
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Sem 1 Study Material
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button
-                size="small"
-                color="primary"
-                href="https://drive.google.com/drive/folders/1ijFioQtdkpXgAt0o_g_oe6o132DEcKav?usp=sharing"
-              >
-                Download
-              </Button>
-            </CardActions>
-          </Card>
-          <Card className={`${classes.cardroot} notes__RightCard`}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg"
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Sem 1 Study Material
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button
-                size="small"
-                color="primary"
-                href="https://drive.google.com/drive/folders/1ijFioQtdkpXgAt0o_g_oe6o132DEcKav?usp=sharing"
-              >
-                Download
-              </Button>
-            </CardActions>
-          </Card>
+          {notes.map((note) => (
+            <Card className={`${classes.cardroot} notes__RightCard`}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {note.name}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary" href={note.url}>
+                  Download
+                </Button>
+              </CardActions>
+            </Card>
+          ))}
+
           <div className={`${classes.noteroot} noteUpload`}>
             <Fab color="primary" aria-label="add" onClick={handleOpen}>
               <NoteAdd />
@@ -180,7 +181,9 @@ function Notes() {
                       />
                       <label for="upload">Choose file</label>
                       <br />
-                      <button className="addNotice__post">Post</button>
+                      <button className="addNotice__post" onClick={notesUpload}>
+                        Post
+                      </button>
                     </div>
                   </form>
                 </div>
